@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.flexbox-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flexbox-item {
+    width: 200px;
+    margin: 10px;
+    border: 3px solid #333;
+    background-color: #dfdfdf;
+}
+
+h1 {
+    color: lime;
+    position: relative;
+    z-index: 10;
+}
+
+.flexbox-item-1 {
+    min-height: 300px;
+    text-align: center;
+    justify-content: center;
+    font-size: 50px;
+    width: 800px;
+}
+
+.flexbox-item-2 {
+    min-height: 200px;
+    background-image: url(dat-bih-gah-dat.gif);
+    background-size: 50vw 50vh;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 500px;
+    justify-content: baseline;
+    font-size: 50px;
+    text-align: center;
+}
+
+.flexbox-item-3 {
+    min-height: 300px;
+    justify-content: center;
+    font-size: 50px;
+    text-align: center;
+    width: 800px;
+}
+
+.up-down-text {
+  /* Links the animation defined below, sets duration to 2 seconds, 
+     makes it smooth (ease-in-out), and loops forever (infinite) */
+  animation: floatUpDown 0.4s ease-in-out infinite;
+  
+  /* Optional: Ensures smooth rendering during transitions */
+  display: inline-block; 
+}
+
+/* Define the movement using keyframes */
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0); /* Start and end at normal position */
+  }
+  50% {
+    transform: translateY(100px); /* Move UP by 20 pixels at the halfway point */
+  }
+}
+
+.faster-up-down-text {
+  /* Links the animation defined below, sets duration to 2 seconds, 
+     makes it smooth (ease-in-out), and loops forever (infinite) */
+  animation: floatUpDown 0.2s ease-in-out infinite;
+  
+  /* Optional: Ensures smooth rendering during transitions */
+  display: inline-block; 
+}
+
+/* Define the movement using keyframes */
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0); /* Start and end at normal position */
+  }
+  50% {
+    transform: translateY(100px); /* Move UP by 20 pixels at the halfway point */
+  }
+}
+
+
+/* 1. The outer container handles the smooth up-and-down */
+.floater {
+  animation: floatMovement 0.1s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* 2. The inner container handles the perfect, constant spin */
+.spinner {
+  animation: constantSpin 1s linear infinite;
+  display: inline-block;
+}
+
+/* Smooth float keyframes */
+@keyframes floatMovement {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1000px);
+  }
+}
+
+/* Uninterrupted constant spin keyframes */
+@keyframes constantSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
